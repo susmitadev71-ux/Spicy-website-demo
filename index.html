@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smoky N Spicy | Siliguri</title>
+<meta name="description" content="Smoky N Spicy, a family-friendly multi-cuisine restaurant in Seth Srilal Market, Siliguri. Live kitchen, thali, momos and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2f5249;
+    --green-dark:#223c35;
+    --mint:#dcebe1;
+    --cream:#f6f1e7;
+    --accent:#e9b872;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--mint);color:var(--cream);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .frame{max-width:1100px;margin:0 auto;padding:16px}
+  .panel{background:var(--green);border:2px solid var(--cream);border-radius:2px;overflow:hidden}
+
+  /* nav */
+  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;position:relative;z-index:2}
+  nav .logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;letter-spacing:.02em;text-transform:none;font-weight:700}
+  nav .links{display:flex;gap:24px}
+  @media(max-width:640px){nav .links a:not(.cta-link){display:none}}
+
+  /* hero */
+  .hero{position:relative;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 40px;
+    background:
+      linear-gradient(180deg,rgba(34,60,53,.25) 0%,rgba(34,60,53,.92) 85%),
+      radial-gradient(circle at 70% 25%,#6b8f78 0,#3b5f52 45%,#223c35 100%);
+    margin-top:-62px;padding-top:120px}
+  .hero .tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;text-transform:uppercase;
+    font-size:clamp(46px,10vw,112px);line-height:.92;letter-spacing:-.035em}
+  .hero p{max-width:520px;margin-top:20px;font-size:16px;opacity:.9}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14px;border:1.5px solid var(--cream)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--green-dark)}
+  .photo-note{position:absolute;top:84px;right:24px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;border:1px dashed var(--cream);padding:4px 10px;border-radius:999px}
+
+  /* strip */
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,241,231,.25);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+  .strip div{padding:16px 24px;border-right:1px solid rgba(246,241,231,.25)}
+  .strip div:last-child{border-right:0}
+  .strip b{display:block;font-size:15px;letter-spacing:0;text-transform:none;font-weight:600;margin-top:2px}
+  @media(max-width:640px){.strip{grid-template-columns:1fr}.strip div{border-right:0;border-bottom:1px solid rgba(246,241,231,.25)}}
+
+  /* menu columns */
+  .section-label{display:flex;justify-content:space-between;padding:22px 24px 0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px}
+  .col{padding:24px;border-right:1px solid rgba(246,241,231,.25)}
+  .col:last-child{border-right:0}
+  .col .num{font-size:12px;opacity:.7}
+  .col h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;text-transform:uppercase;letter-spacing:-.01em;margin:4px 0 14px;line-height:1.05}
+  .ph{aspect-ratio:4/5;border-radius:2px;display:flex;align-items:flex-end;padding:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,241,231,.8)}
+  .ph.a{background:linear-gradient(160deg,#c98a4b,#7a3f1d)}
+  .ph.b{background:linear-gradient(160deg,#d9c3a0,#8a6a4a)}
+  .ph.c{background:linear-gradient(160deg,#a65a3a,#4a2517)}
+  .col p{font-size:13px;margin-top:14px;opacity:.85}
+  .col ul{list-style:none;margin-top:12px;font-size:13px}
+  .col li{padding:6px 0;border-top:1px solid rgba(246,241,231,.18)}
+  @media(max-width:760px){.cols{grid-template-columns:1fr}.col{border-right:0;border-bottom:1px solid rgba(246,241,231,.25)}.ph{aspect-ratio:16/10}}
+
+  /* visit */
+  .visit{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-top:1px solid rgba(246,241,231,.25)}
+  .visit>div{padding:36px 24px}
+  .visit h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,6vw,60px);text-transform:uppercase;line-height:.95;letter-spacing:-.03em}
+  .visit dl{font-size:14px}
+  .visit dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-top:14px}
+  .visit dt:first-child{margin-top:0}
+  @media(max-width:760px){.visit{grid-template-columns:1fr}}
+
+  /* booking */
+  .book{display:grid;grid-template-columns:1fr 1.2fr;border-top:1px solid rgba(246,241,231,.25)}
+  .book>div{padding:36px 24px}
+  .book h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,6vw,60px);text-transform:uppercase;line-height:.95;letter-spacing:-.03em}
+  .book .sub{margin-top:14px;font-size:14px;opacity:.85;max-width:340px}
+  form.booking{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form.booking .full{grid-column:1/-1}
+  form.booking label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+  form.booking input,form.booking select,form.booking textarea{width:100%;padding:12px 14px;border-radius:2px;border:1.5px solid rgba(246,241,231,.5);background:rgba(246,241,231,.07);color:var(--cream);font:inherit;font-size:15px}
+  form.booking select option{color:#222}
+  form.booking input::placeholder,form.booking textarea::placeholder{color:rgba(246,241,231,.5)}
+  form.booking input:focus,form.booking select:focus,form.booking textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+  form.booking input[type=date],form.booking input[type=time]{color-scheme:dark}
+  form.booking button{cursor:pointer;font:inherit;font-weight:600;font-size:15px;border:0;width:100%}
+  .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+  .slots .grp{grid-column:1/-1;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;margin-top:6px}
+  .slots .asap{grid-column:1/-1}
+  .slots .grp:first-child{margin-top:0}
+  form.booking button.slot{width:auto;padding:10px 6px;border-radius:999px;border:1.5px solid rgba(246,241,231,.5);background:transparent;color:var(--cream);font-size:13px;font-weight:500;cursor:pointer}
+  form.booking button.slot.active{background:var(--accent);border-color:var(--accent);color:var(--green-dark);font-weight:600}
+  form.booking button.slot:disabled{opacity:.3;text-decoration:line-through;cursor:not-allowed}
+  .form-note{font-size:12px;opacity:.7;margin-top:2px}
+  .result{background:rgba(246,241,231,.1);border:1.5px solid var(--accent);border-radius:2px;padding:16px}
+  .result[hidden]{display:none}
+  .result-title{font-weight:600;margin-bottom:8px}
+  .result pre{white-space:pre-wrap;font:inherit;font-size:13px;opacity:.9;margin-bottom:14px}
+  .result-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .result-btns .btn{width:auto;flex:1 1 150px;text-align:center;color:var(--cream);background:transparent;cursor:pointer;font:inherit;font-weight:600;font-size:14px;border:1.5px solid var(--cream)}
+  .result-btns .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--green-dark)}
+  form.booking .send{border:1.5px solid var(--accent)}
+  .num-note{font-size:12px;opacity:.75;margin-top:10px}
+  .form-error{color:#ffd1c7;font-size:13px;min-height:18px}
+  @media(max-width:760px){.book{grid-template-columns:1fr}form.booking{grid-template-columns:1fr}}
+
+  footer{padding:18px 24px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;opacity:.7;border-top:1px solid rgba(246,241,231,.25)}
+  .sample-bar{background:var(--green-dark);color:var(--cream);text-align:center;font-size:12px;padding:8px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="sample-bar">Design preview &ndash; sample layout, photos and menu to be replaced with the restaurant's own</div>
+<div class="frame">
+<div class="panel">
+
+  <nav>
+    <div class="logo">Smoky N Spicy</div>
+    <div class="links">
+      <a href="#menu">Menu</a>
+      <a href="#book">Book a table</a>
+      <a href="#visit">Visit</a>
+      <a class="cta-link" href="#order">Order now</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="photo-note">Hero photo here</span>
+    <div class="tag">Seth Srilal Market &middot; Siliguri</div>
+    <h1>Fresh from<br>the live kitchen.</h1>
+    <p>A family-friendly, multi-cuisine restaurant where you can watch your food being cooked fresh. Affordable thalis, momos and fast food, served warm.</p>
+    <div class="btns">
+      <a class="btn primary" href="#order">Order now</a>
+      <a class="btn" href="#book">Book a table</a>
+      <a class="btn" href="tel:+919832096376">Call +91 98320 96376</a>
+    </div>
+  </header>
+
+  <div class="strip">
+    <div>Google rating<b>4.4 &#9733; &middot; 546 reviews</b></div>
+    <div>Open daily<b>10:30 AM &ndash; 10:30 PM</b></div>
+    <div>Cuisine<b>Veg &amp; non-veg &middot; Multi-cuisine</b></div>
+  </div>
+
+  <section id="menu">
+    <div class="section-label"><span>Smoky N Spicy</span><span>Menu highlights</span><span>Siliguri</span></div>
+    <div class="cols">
+      <div class="col">
+        <span class="num">(01)</span>
+        <h3>Thali &amp; Meals</h3>
+        <div class="ph a">Photo</div>
+        <p>Hearty, affordable thalis and main dishes, cooked fresh to order.</p>
+        <ul><li>Veg thali</li><li>Non-veg thali</li><li>Rice &amp; curries</li></ul>
+      </div>
+      <div class="col">
+        <span class="num">(02)</span>
+        <h3>Momos &amp; Starters</h3>
+        <div class="ph b">Photo</div>
+        <p>Guest favourites from the live kitchen, from momos to crispy starters.</p>
+        <ul><li>Chicken momo</li><li>Crispy baby corn</li><li>Fast food</li></ul>
+      </div>
+      <div class="col">
+        <span class="num">(03)</span>
+        <h3>Chai &amp; Drinks</h3>
+        <div class="ph c">Photo</div>
+        <p>Something warm or cool to go with your meal.</p>
+        <ul><li>Milk tea</li><li>Cold drinks</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="book">
+    <div>
+      <h2>Order<br>on WhatsApp.</h2>
+      <p class="sub">Tell us what you would like. Your order goes to the restaurant on WhatsApp and they will confirm the price and time.</p>
+    </div>
+    <div>
+      <form class="booking" id="orderForm" novalidate>
+        <div>
+          <label for="oName">Full name</label>
+          <input id="oName" type="text" placeholder="Your name" autocomplete="name">
+        </div>
+        <div>
+          <label for="oPhone">Phone number</label>
+          <input id="oPhone" type="tel" placeholder="98XXXXXXXX" autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="full">
+          <label for="oItems">Your order</label>
+          <textarea id="oItems" rows="4" placeholder="Example: 1 veg thali, 2 plates chicken momo, 1 milk tea"></textarea>
+        </div>
+        <div class="full">
+          <label id="oTimeLabel">Time you want it</label>
+          <input type="hidden" id="oTime" value="ASAP">
+          <div class="slots" id="oSlots" role="radiogroup" aria-labelledby="oTimeLabel"></div>
+          <p class="form-note" id="oTimeSel">Selected: As soon as possible</p>
+        </div>
+        <div class="full">
+          <label for="oNotes">Notes (optional)</label>
+          <textarea id="oNotes" rows="2" placeholder="Less spicy, no onion, extra chutney..."></textarea>
+        </div>
+        <div class="full form-error" id="oError" role="alert"></div>
+        <div class="full result" id="oResult" hidden>
+          <p class="result-title">Your order is ready. Tap &ldquo;Open WhatsApp&rdquo; to send it.</p>
+          <pre id="oPreview"></pre>
+          <div class="result-btns">
+            <a class="btn primary" id="oLink" href="#" target="_blank" rel="noopener">Open WhatsApp</a>
+            <button type="button" class="btn copy" data-p="o">Copy message</button>
+          </div>
+          <p class="form-note" id="oNote">If WhatsApp doesn't open, copy the message and send it to +91 98320 96376.</p>
+        </div>
+        <div class="full">
+          <button type="button" class="btn primary send" id="oSend">Send order on WhatsApp</button>
+          <p class="form-note">Open daily 10:30 AM &ndash; 10:30 PM.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="book" class="book">
+    <div>
+      <h2>Book<br>a table.</h2>
+      <p class="sub">Fill in your details and we'll get your booking on WhatsApp. The restaurant will confirm your table shortly.</p>
+    </div>
+    <div>
+      <form class="booking" id="bookingForm" novalidate>
+        <div class="full">
+          <label for="bName">Full name</label>
+          <input id="bName" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="bPhone">Phone number</label>
+          <input id="bPhone" name="phone" type="tel" placeholder="98XXXXXXXX" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div>
+          <label for="bGuests">Number of guests</label>
+          <select id="bGuests" name="guests" required>
+            <option value="1">1 guest</option>
+            <option value="2" selected>2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+            <option value="7">7 guests</option>
+            <option value="8">8 guests</option>
+            <option value="9+">9 or more</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="bDate">Date</label>
+          <input id="bDate" name="date" type="date" required>
+        </div>
+        <div class="full">
+          <label id="bTimeLabel">Time</label>
+          <input type="hidden" id="bTime" value="">
+          <div class="slots" id="bSlots" role="radiogroup" aria-labelledby="bTimeLabel"></div>
+          <p class="form-note" id="bTimeSel">Tap a time to choose</p>
+        </div>
+        <div class="full">
+          <label for="bNotes">Special request (optional)</label>
+          <textarea id="bNotes" name="notes" rows="3" placeholder="Birthday, high chair, veg only..."></textarea>
+        </div>
+        <div class="full form-error" id="bError" role="alert"></div>
+        <div class="full result" id="bResult" hidden>
+          <p class="result-title">Your booking is ready. Tap &ldquo;Open WhatsApp&rdquo; to send it.</p>
+          <pre id="bPreview"></pre>
+          <div class="result-btns">
+            <a class="btn primary" id="bLink" href="#" target="_blank" rel="noopener">Open WhatsApp</a>
+            <button type="button" class="btn copy" data-p="b">Copy message</button>
+          </div>
+          <p class="form-note" id="bNote">If WhatsApp doesn't open, copy the message and send it to +91 98320 96376.</p>
+        </div>
+        <div class="full">
+          <button type="button" class="btn primary send" id="bSend">Send booking on WhatsApp</button>
+          <p class="form-note">Open daily 10:30 AM &ndash; 10:30 PM. Last booking 10:00 PM.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="visit" class="visit">
+    <div>
+      <h2>Come hungry.<br>Leave happy.</h2>
+      <div class="btns">
+        <a class="btn primary" href="#order">Order now</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Smoky+N+Spicy+Seth+Srilal+Market+Siliguri" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <div>
+      <dl>
+        <dt>Address</dt>
+        <dd>Seth Srilal Market, opp. Silver Queen,<br>Siliguri, West Bengal 734001</dd>
+        <dt>Hours</dt>
+        <dd>Every day, 10:30 AM &ndash; 10:30 PM</dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+919832096376">+91 98320 96376</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; Smoky N Spicy, Siliguri</span>
+    <span>Sample design preview</span>
+  </footer>
+
+</div>
+</div>
+<script>
+(function(){
+  var WA = '919832096376';
+  function $(id){ return document.getElementById(id); }
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  var t = new Date();
+  var iso = t.getFullYear() + '-' + pad(t.getMonth()+1) + '-' + pad(t.getDate());
+  $('bDate').min = iso;
+  $('bDate').value = iso;
+
+  function fmtDate(v){
+    var p = v.split('-');
+    var d = new Date(+p[0], +p[1]-1, +p[2]);
+    return d.toLocaleDateString('en-IN', {weekday:'short', day:'numeric', month:'short', year:'numeric'});
+  }
+  function fmtTime(v){
+    var p = v.split(':'), h = +p[0], m = p[1];
+    var ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return h + ':' + m + ' ' + ap;
+  }
+
+  function showResult(prefix, msg){
+    $(prefix + 'Preview').textContent = msg;
+    $(prefix + 'Link').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+    var box = $(prefix + 'Result');
+    box.hidden = false;
+    try { box.scrollIntoView({behavior:'smooth', block:'center'}); } catch(x) {}
+  }
+  function fail(prefix, text, fieldId){
+    $(prefix + 'Error').textContent = text;
+    $(prefix + 'Result').hidden = true;
+    if(fieldId){ try { $(fieldId).focus(); } catch(x) {} }
+  }
+
+
+  /* ---------- time slots ---------- */
+  function label12(h, m){ var ap = h >= 12 ? 'PM' : 'AM'; var hh = h % 12 || 12; return hh + ':' + pad(m) + ' ' + ap; }
+  function makeSlots(p, opts){
+    var box = $(p + 'Slots'), hid = $(p + 'Time'), sel = $(p + 'TimeSel');
+    var all = [];
+    function text(v){
+      if(v === 'ASAP'){ return 'As soon as possible'; }
+      var q = v.split(':'); return label12(+q[0], +q[1]);
+    }
+    function pick(v){
+      hid.value = v;
+      for(var i = 0; i < all.length; i++){
+        var on = all[i].getAttribute('data-v') === v;
+        all[i].classList.toggle('active', on);
+        all[i].setAttribute('aria-checked', on ? 'true' : 'false');
+      }
+      sel.textContent = v ? 'Selected: ' + text(v) : 'Tap a time to choose';
+    }
+    function add(v, cls){
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'slot' + (cls ? ' ' + cls : '');
+      btn.setAttribute('data-v', v); btn.setAttribute('role', 'radio');
+      btn.textContent = text(v);
+      btn.addEventListener('click', function(){ pick(v); });
+      box.appendChild(btn); all.push(btn);
+    }
+    if(opts.asap){ add('ASAP', 'asap'); }
+    [['Lunch', 10.5, 16], ['Evening', 16, 19], ['Dinner', 19, 22.01]].forEach(function(g){
+      var h = document.createElement('div'); h.className = 'grp'; h.textContent = g[0]; box.appendChild(h);
+      for(var mins = 630; mins <= 22*60; mins += 30){
+        var hr = mins / 60;
+        if(hr < g[1] || hr >= g[2]) continue;
+        add(pad(Math.floor(mins/60)) + ':' + pad(mins % 60));
+      }
+    });
+    function refresh(){
+      var d = opts.dateId ? $(opts.dateId).value : iso, now = new Date();
+      for(var i = 0; i < all.length; i++){
+        var v = all[i].getAttribute('data-v');
+        if(v === 'ASAP'){ continue; }
+        var past = d && new Date(d + 'T' + v) < now;
+        all[i].disabled = !!past;
+        if(past && hid.value === v){ pick(opts.asap ? 'ASAP' : ''); }
+      }
+    }
+    refresh();
+    if(opts.asap){ pick('ASAP'); }
+    return {pick: pick, refresh: refresh, text: text};
+  }
+  var bSlots = makeSlots('b', {dateId: 'bDate'});
+  var oSlots = makeSlots('o', {asap: true});
+  $('bDate').addEventListener('change', bSlots.refresh);
+
+  /* ---------- booking ---------- */
+  function sendBooking(){
+    $('bError').textContent = '';
+    var name = $('bName').value.trim();
+    var phone = $('bPhone').value.replace(/[^\d+]/g,'');
+    var date = $('bDate').value, time = $('bTime').value;
+
+    if(!name){ return fail('b','Please enter your name.','bName'); }
+    if(phone.replace(/\D/g,'').length < 10){ return fail('b','Please enter a valid phone number.','bPhone'); }
+    if(!date){ return fail('b','Please choose a date.','bDate'); }
+    if(!time){ return fail('b','Please choose a time.','bTime'); }
+    if(time < '10:30' || time > '22:00'){ return fail('b','Please choose a time between 10:30 AM and 10:00 PM.','bTime'); }
+    if(new Date(date + 'T' + time) < new Date()){ return fail('b','That time has already passed. Please pick a later time.'); }
+
+    var msg = 'Hello Smoky N Spicy, I would like to book a table.\n\n' +
+      'Name: ' + name + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Date: ' + fmtDate(date) + '\n' +
+      'Time: ' + fmtTime(time) + '\n' +
+      'Guests: ' + $('bGuests').value;
+    var notes = $('bNotes').value.trim();
+    if(notes){ msg += '\nRequest: ' + notes; }
+    msg += '\n\nPlease confirm. Thank you!';
+    showResult('b', msg);
+  }
+
+  /* ---------- order ---------- */
+
+  function sendOrder(){
+    $('oError').textContent = '';
+    oSlots.refresh();
+    var name = $('oName').value.trim();
+    var phone = $('oPhone').value.replace(/[^\d+]/g,'');
+    var items = $('oItems').value.trim();
+    var time = $('oTime').value;
+
+    if(!name){ return fail('o','Please enter your name.','oName'); }
+    if(phone.replace(/\D/g,'').length < 10){ return fail('o','Please enter a valid phone number.','oPhone'); }
+    if(!items){ return fail('o','Please write what you would like to order.','oItems'); }
+    if(!time){ return fail('o','Please choose a time.'); }
+
+    var msg = 'Hello Smoky N Spicy, I would like to place an order.\n\n' +
+      'Name: ' + name + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Time: ' + oSlots.text(time) + '\n' +
+      '\nOrder:\n' + items;
+    var notes = $('oNotes').value.trim();
+    if(notes){ msg += '\n\nNotes: ' + notes; }
+    msg += '\n\nPlease confirm the total and time. Thank you!';
+    showResult('o', msg);
+  }
+
+  $('bSend').addEventListener('click', sendBooking);
+  $('oSend').addEventListener('click', sendOrder);
+  $('bookingForm').addEventListener('submit', function(e){ e.preventDefault(); sendBooking(); });
+  $('orderForm').addEventListener('submit', function(e){ e.preventDefault(); sendOrder(); });
+
+  /* ---------- copy fallback ---------- */
+  var copyBtns = document.querySelectorAll('.copy');
+  for(var i = 0; i < copyBtns.length; i++){
+    copyBtns[i].addEventListener('click', function(){
+      var p = this.getAttribute('data-p');
+      var text = $(p + 'Preview').textContent;
+      var note = $(p + 'Note');
+      function done(){ note.textContent = 'Copied! Now open WhatsApp and paste it to +91 98320 96376.'; }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(x) { note.textContent = 'Please select the message above and copy it manually.'; }
+        document.body.removeChild(ta);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
